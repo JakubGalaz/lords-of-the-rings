@@ -18,6 +18,11 @@ import { MainSectionComponent } from './location/main-section/main-section.compo
 import { PropertiesComponent } from './location/properties/properties.component';
 import { PhotoComponent } from './location/photo/photo.component';
 import { LocationsService } from './locations.service';
+import { AddLocationComponent } from './add-location/add-location.component';
+import { InputTextModule } from 'primeng/inputtext';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
 
 @NgModule({
   declarations: [
@@ -30,6 +35,7 @@ import { LocationsService } from './locations.service';
     MainSectionComponent,
     PropertiesComponent,
     PhotoComponent,
+    AddLocationComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +46,10 @@ import { LocationsService } from './locations.service';
     CdkScrollableModule,
     TableModule,
     ButtonModule,
+    InputTextModule,
+    ReactiveFormsModule,
+    MessagesModule,
+    MessageModule,
   ],
   providers: [LocationsService],
   bootstrap: [AppComponent],

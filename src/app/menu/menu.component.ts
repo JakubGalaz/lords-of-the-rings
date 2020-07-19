@@ -31,7 +31,17 @@ export class MenuComponent implements OnInit {
       },
       {
         label: 'Dodaj pozycję',
-        items: [{ label: 'Dodaj postać' }, { label: 'Dodaj lokację' }],
+        items: [
+          {
+            label: 'Dodaj postać',
+            command: () => this.toRoute('locationsList'),
+          },
+
+          {
+            label: 'Dodaj lokację',
+            command: () => this.toRoute('addLocation'),
+          },
+        ],
       },
       {
         label: 'O nas',
