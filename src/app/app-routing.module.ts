@@ -5,6 +5,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LocationsListComponent } from './locations-list/locations-list.component';
 import { LocationComponent } from './location/location.component';
 import { AddLocationComponent } from './add-location/add-location.component';
+import { CharactersListComponent } from './characters-list/characters-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'locationsList', component: LocationsListComponent },
   { path: 'location/:id', component: LocationComponent },
   { path: 'addLocation', component: AddLocationComponent },
+  { path: 'charactersList/:type', component: CharactersListComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

@@ -25,3 +25,12 @@
   border-radius: 3%;
   max-width: 80%;
 }
+
+.editor {
+  float: left;
+}
+
+.button {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}

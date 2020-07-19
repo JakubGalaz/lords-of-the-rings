@@ -23,6 +23,10 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+import { EditorModule } from 'primeng/editor';
+import { EditorComponent } from './add-location/editor/editor.component';
+import { FormsModule } from '@angular/forms';
+import { CharactersListComponent } from './characters-list/characters-list.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +40,8 @@ import { MessageModule } from 'primeng/message';
     PropertiesComponent,
     PhotoComponent,
     AddLocationComponent,
+    EditorComponent,
+    CharactersListComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +56,8 @@ import { MessageModule } from 'primeng/message';
     ReactiveFormsModule,
     MessagesModule,
     MessageModule,
+    EditorModule,
+    FormsModule,
   ],
   providers: [LocationsService],
   bootstrap: [AppComponent],

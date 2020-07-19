@@ -17,10 +17,19 @@ export class MenuComponent implements OnInit {
       {
         label: 'Postacie',
         items: [
-          { label: 'Człowiek' },
-          { label: 'Elf' },
-          { label: 'Krasnolud' },
-          { label: 'Goblin' },
+          {
+            label: 'Człowiek',
+            command: () => this.toRoute('charactersList/Człowiek'),
+          },
+          { label: 'Elf', command: () => this.toRoute('charactersList/Elf') },
+          {
+            label: 'Krasnolud',
+            command: () => this.toRoute('charactersList/Krasnolud'),
+          },
+          {
+            label: 'Hobbit',
+            command: () => this.toRoute('charactersList/Hobbit'),
+          },
           { label: 'Ork' },
           { label: 'Inne' },
         ],

@@ -5,6 +5,8 @@ import {
   Validators,
   AbstractControl,
 } from '@angular/forms';
+import { Location } from '../interfaces/Location';
+import { LocationsService } from '../locations.service';
 
 @Component({
   selector: 'app-add-location',
@@ -14,7 +16,10 @@ import {
 export class AddLocationComponent implements OnInit {
   locationForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private locationServie: LocationsService
+  ) {}
 
   ngOnInit(): void {
     this.locationForm = this.fb.group({
@@ -24,14 +29,6 @@ export class AddLocationComponent implements OnInit {
           Validators.required,
           Validators.minLength(4),
           Validators.maxLength(15),
-          Validators.pattern('[a-zA-Z ]*'),
-        ],
-      ],
-      section: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(100),
           Validators.pattern('[a-zA-Z ]*'),
         ],
       ],
@@ -83,5 +80,31 @@ export class AddLocationComponent implements OnInit {
   }
   get image(): AbstractControl {
     return this.locationForm.get('image');
+  }
+
+  addLocation(): void {
+    const location = this.createLocation();
+    this.locationServie.documents.push(location);
+  }
+
+  createLocation(): Location {
+    const today: string = '' + Date.now();
+
+    const location = {
+      id: '21',
+      name: this.locationForm.value.name,
+      section: this.locationForm.value.section,
+      creationDate: today,
+      position: this.locationForm.value.position,
+      locationType: this.locationForm.value.locationType,
+      residents: this.locationForm.value.residents,
+      image: this.locationForm.value.image,
+    };
+
+    return location;
+  }
+
+  sectionUpdate(e: string): void {
+    this.locationForm.value.section = e;
   }
 }

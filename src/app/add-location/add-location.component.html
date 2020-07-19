@@ -186,6 +186,21 @@
           </div>
         </div>
       </div>
+
+      <div>
+        <app-editor (newSection)="sectionUpdate($event)"></app-editor>
+      </div>
+
+      <p-button
+        label="Dodaj lokację"
+        icon="pi pi-check"
+        iconPos="left"
+        class="button"
+        [disabled]="locationForm.invalid"
+        (click)="addLocation()"
+        [routerLink]="['/locationsList']"
+      ></p-button>
+      <p></p>
     </form>
 
     <div *ngIf="this.locationForm.value.image" class="right">
@@ -197,3 +212,5 @@
     </div>
   </div>
 </div>
+<p></p>
+<div class="editor"></div>
